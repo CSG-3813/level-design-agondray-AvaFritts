@@ -66,8 +66,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1.5}
-  m_Center: {x: 0, y: 1, z: 0.5}
+  m_Size: {x: 1.25, y: 2, z: 1.75}
+  m_Center: {x: 0, y: 1, z: 0.65}
 --- !u!1 &4136397401790171718
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 2230531666757134320}
   - component: {fileID: 3538640226706445437}
   - component: {fileID: 2205360978265937950}
+  - component: {fileID: 9039358350247549348}
   m_Layer: 0
   m_Name: Locker
   m_TagString: Untagged
@@ -151,6 +152,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9039358350247549348
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4136397401790171718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2414751425368093432, guid: d236b346b34646248b15e46245610fcc, type: 3}
 --- !u!1 &4742747762618601916
 GameObject:
   m_ObjectHideFlags: 0
