@@ -7,19 +7,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.Audio;
 
 public class Locker : MonoBehaviour
 {
     //VARS
     public string playerTag;
-    public float correctOrder;
+    public string correctOrder;
     public SubmitLocker submitLocker;
     private Animator doorCtrl;
     public string boolName;
+
+    private AudioSource door;
+    public AudioClip openDoor;
     // Start is called before the first frame update
     void Awake()
     {
         doorCtrl = this.GetComponent<Animator>();
+        door = this.GetComponent<AudioSource>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -30,12 +35,17 @@ public class Locker : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 doorCtrl.SetBool(boolName, true);
-                //submitLocker.
+                submitLocker.UpdateCode(correctOrder);
+                door.PlayOneShot(openDoor);
             }
             
         }
     }
 
+    public void ResetLocker()
+    {
+        doorCtrl.SetBool(boolName, false);
+    }
 
    /* private void OnTriggerExit(Collider other)
     {

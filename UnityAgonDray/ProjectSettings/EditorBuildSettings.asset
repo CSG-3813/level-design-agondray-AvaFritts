@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GreyboxingFixedScale.unity
-    guid: c4914f62cc5d4c9479cae2a3050b05f3
-  m_configObjects: {}
+    path: Assets/Scenes/EvenBetterFixedScale.unity
+    guid: 333fb2d144c15bc4aada72f6538f5a8a
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
+      type: 2}
