@@ -47,7 +47,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.8396226, g: 0.7153673, b: 0.43169275, a: 1}
   m_Intensity: 0.47
-  m_Range: 1.99
+  m_Range: 2.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -263,7 +263,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8583780524957933453}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
