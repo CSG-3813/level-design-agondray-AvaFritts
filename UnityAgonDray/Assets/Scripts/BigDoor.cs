@@ -8,7 +8,11 @@ public class BigDoor : MonoBehaviour
     private Animator animator;
     public string boolName;
     public string triggerName;
+
+    [Space(10)]
+    public bool canOpen;
     public bool autoClose;
+    public bool isLocked;
      
     // Start is called before the first frame update
     void Awake()
@@ -16,16 +20,20 @@ public class BigDoor : MonoBehaviour
         animator = this.GetComponent<Animator>();   
     }
 
-    private void OnTriggerStay(Collider other)
+    public void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && canOpen && !isLocked)
+        {
+            AnimateDoor();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         GameObject ourObject = other.gameObject;
         if (ourObject.tag.CompareTo(playerTag).Equals(0))
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-               AnimateDoor();
-            }
-
+            canOpen = true;
         }
     }
 
@@ -34,12 +42,14 @@ public class BigDoor : MonoBehaviour
     {
         bool testBool = animator.GetBool(boolName);
 
-        if (autoClose && testBool)
+        GameObject ourObject = other.gameObject;
+        if (ourObject.tag.CompareTo(playerTag).Equals(0))
         {
-            GameObject ourObject = other.gameObject;
-            if (ourObject.tag.CompareTo(playerTag).Equals(0))
+            canOpen = false;
+
+            if (autoClose && testBool)
             {
-                    AnimateDoor();
+                AnimateDoor();
             }
         }
     }

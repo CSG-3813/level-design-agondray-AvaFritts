@@ -41,6 +41,7 @@ public class Sword : MonoBehaviour
     void CollectSword() 
     {
         hasCollected = true;
+        //UPDATE INVENTORY
     }
 
     private void OnTriggerExit(Collider other)
