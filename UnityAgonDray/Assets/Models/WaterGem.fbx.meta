@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3436027fd2b26e0438c205c7914c0ed7
+guid: 8d546e23e7225d14aa295f5f3e499426
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Dirt
-    second: {fileID: 2100000, guid: 1592329056477df4aaf222ce47d3b6ed, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #2
-    second: {fileID: 2100000, guid: 3e5ace67ee9ba7e44b071c229e0b3484, type: 2}
+      name: PlaceholderDoor
+    second: {fileID: 2100000, guid: e05ea4d40acb6f44c86c94a40eac06e4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -45,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.1
+    globalScale: 0.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -98,7 +93,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1.1
+    globalScale: 0.005
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

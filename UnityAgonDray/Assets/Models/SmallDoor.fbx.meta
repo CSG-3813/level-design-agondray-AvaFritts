@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3436027fd2b26e0438c205c7914c0ed7
+guid: 1db6a07841b476c48a7676d9f5a3fce4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Dirt
-    second: {fileID: 2100000, guid: 1592329056477df4aaf222ce47d3b6ed, type: 2}
+      name: PlaceholderDoorFrame
+    second: {fileID: 2100000, guid: 54b486e93aa613244a1551b24213fded, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material #2
-    second: {fileID: 2100000, guid: 3e5ace67ee9ba7e44b071c229e0b3484, type: 2}
+      name: PlaceholderMetal
+    second: {fileID: 2100000, guid: 54b486e93aa613244a1551b24213fded, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlaceholderWood
+    second: {fileID: 2100000, guid: e988cc4b597eaa046b3f69027561dd61, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -45,7 +50,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -98,7 +103,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1.1
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
