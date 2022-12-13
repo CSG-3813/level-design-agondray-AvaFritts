@@ -13,6 +13,7 @@ public class Locker : MonoBehaviour
 {
     //VARS
     public string playerTag;
+    bool canOpen = false;
     public string correctOrder;
     public SubmitLocker submitLocker;
     private Animator doorCtrl;
@@ -27,10 +28,9 @@ public class Locker : MonoBehaviour
         door = this.GetComponent<AudioSource>();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        GameObject ourObject = other.gameObject;
-        if (ourObject.tag.CompareTo(playerTag).Equals(0))
+        if (canOpen)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -38,9 +38,28 @@ public class Locker : MonoBehaviour
                 submitLocker.UpdateCode(correctOrder);
                 door.PlayOneShot(openDoor);
             }
-            
         }
+           
+            
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject colGO = other.gameObject;
+        if (colGO.tag.Equals("Player"))
+        {
+            canOpen = true;
+        }
+    }//end OnTriggerEnter
+
+    private void OnTriggerExit(Collider other)
+    {
+        GameObject colGO = other.gameObject;
+        if (colGO.tag.Equals("Player"))
+        {
+            canOpen = false;
+        }
+    } //end OnTriggerExit
 
     public void ResetLocker()
     {

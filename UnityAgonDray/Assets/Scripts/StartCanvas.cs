@@ -24,6 +24,6 @@ public class StartCanvas : MonoBehaviour
 
     public void StartingGame()
     {
-        GameManager.GM.StartGame();
+        GameManager.GM.PlayGame();
     }
 }

@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
     //START LEVEL SELECT
     public void StartGame()
     {
-       // SceneManager.LoadScene(levelSelectScene);
+       SceneManager.LoadScene(startScene);
     }
 
     //LOAD THE LEVEL FOR THE FIRST TIME OR RESTART
