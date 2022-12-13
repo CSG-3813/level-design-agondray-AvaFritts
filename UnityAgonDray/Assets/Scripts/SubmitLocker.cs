@@ -9,12 +9,24 @@ public class SubmitLocker : MonoBehaviour
     private Animator doorCtrl;
     public string boolName;
 
+    [Space(10)]
+
+    public Collider trapppedObjectCollider;
+    public Collider thisTrigger;
+
+    [Space(10)]
+
     private AudioSource door;
     public AudioClip openDoor;
     public AudioClip closeDoor;
     public Locker[] lockerList;
 
     public string currentNumber;
+
+    [Space(10)]
+    [Header("Big Door the Locker Unlocks")]
+    public Animator animator;
+    public string triggerName;
 
     void Awake()
     {
@@ -54,8 +66,15 @@ public class SubmitLocker : MonoBehaviour
                 door.PlayOneShot(closeDoor);
                 return;
             }
+
         doorCtrl.SetBool(boolName, true);
         door.PlayOneShot(openDoor);
+
+        //Open the Door
+        animator.SetTrigger(triggerName);
+
+        thisTrigger.enabled = false;
+        trapppedObjectCollider.GetComponent<Collider>().enabled = true;
     }
 
 }

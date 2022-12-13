@@ -1,3 +1,4 @@
+//UPTDATED DEC 13 BY AVA FRITTS
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,23 @@ public class BigDoor : MonoBehaviour
     [Space(10)]
     public bool canOpen;
     public bool autoClose;
+
+    [Space(10)]
     public bool isLocked;
+    public bool needsKey;
+    public InventoryManager inventoryManager;
+    [Tooltip("Set to the ID of the corresponding Key in the inventory")]
+    public int keyIDTag;
      
     // Start is called before the first frame update
     void Awake()
     {
-        animator = this.GetComponent<Animator>();   
+        animator = this.GetComponent<Animator>();
+        if (needsKey)
+        {
+            isLocked = true;
+            inventoryManager = GameObject.FindObjectOfType<InventoryManager>();
+        }
     }
 
     public void FixedUpdate()
@@ -25,6 +37,13 @@ public class BigDoor : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && canOpen && !isLocked)
         {
             AnimateDoor();
+        } else if (Input.GetKeyDown(KeyCode.E) && canOpen && isLocked)
+        {
+            if (needsKey)
+            {
+                CheckForKey();
+            }
+
         }
     }
 
@@ -50,6 +69,21 @@ public class BigDoor : MonoBehaviour
             if (autoClose && testBool)
             {
                 AnimateDoor();
+            }
+        }
+    }
+    public void CheckForKey()
+    {
+        if(inventoryManager != null)//need one for this!
+        {
+            if(inventoryManager.idTag.CompareTo(keyIDTag) == 0) //making sure the item is selected
+            {
+             //if the item is active and usable
+                if (inventoryManager.UseItem(keyIDTag))
+                {
+                    isLocked = false;
+                    AnimateDoor();
+                }
             }
         }
     }

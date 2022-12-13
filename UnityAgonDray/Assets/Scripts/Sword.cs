@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
+    /*** VARIABLES ***/
+    [Header("Set in Inspector")]
+    [Tooltip("The corresponding value in the inventory Manager Script")]
+    public int itemValue;
     public string playerTag;
+
+    [Space(10)]
+
+    public GameObject itemHere;
+    public string itemName;
+
+    [Space(10)]
+    [Header("Set Dynamically")]
+    public InventoryManager referenceItem; //the canvas it belongs to
     private Animator animator;
     //private AudioSource audioSource;
     public bool hasCollected = false;
@@ -14,6 +27,7 @@ public class Sword : MonoBehaviour
     void Awake()
     {
         animator = this.GetComponent<Animator>();
+        referenceItem = GameObject.FindObjectOfType<InventoryManager>();
         //audioSource = this.GetComponent<AudioSource>();
     }
 
@@ -41,7 +55,8 @@ public class Sword : MonoBehaviour
     void CollectSword() 
     {
         hasCollected = true;
-        //UPDATE INVENTORY
+        referenceItem.AddToInventory(itemValue); //checks value
+        itemHere.SetActive(false);
     }
 
     private void OnTriggerExit(Collider other)

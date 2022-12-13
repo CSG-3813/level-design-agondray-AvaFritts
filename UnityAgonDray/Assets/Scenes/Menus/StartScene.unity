@@ -322,9 +322,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1618048410}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1618048415}
+        m_TargetAssemblyTypeName: StartCanvas, Assembly-CSharp
+        m_MethodName: StartingGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -799,9 +799,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1618048415}
-        m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
-        m_MethodName: StopCoroutine
-        m_Mode: 5
+        m_TargetAssemblyTypeName: StartCanvas, Assembly-CSharp
+        m_MethodName: LoadCredits
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -3,7 +3,7 @@
  * Date Created: Feb 23, 2022
  * 
  * Last Edited by: Ava Fritts
- * Last Edited: June 2nd, 2022
+ * Last Edited: Dec 13th, 2022
  * 
  * Description: Basic GameManager Template
 ****/
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
         //if (Input.GetKey("escape")) { PauseGame(); }
 
         //Check for next level
-        //if (nextLevel) { NextLevel(); }
+        if (nextLevel) { NextLevel(); }
 
         //if we are playing the game
         if (gameState == gameStates.Playing)
@@ -186,7 +186,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    /**GO TO THE NEXT LEVEL
+    //GO TO THE NEXT LEVEL
     void NextLevel()
     {
         nextLevel = false; //reset the next level
@@ -201,5 +201,5 @@ public class GameManager : MonoBehaviour
         { //if we have run out of levels go to game over
             GameOver();
         } //end if (gameLevelsCount <=  gameLevels.Length)
-    }end NextLevel()**/
+    }//end NextLevel()
 }
