@@ -42,9 +42,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Activated
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: IsOpen
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2457876111934834994}
   m_Solo: 0
@@ -233,9 +230,6 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: Activated
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsOpen
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5793874833071525641}

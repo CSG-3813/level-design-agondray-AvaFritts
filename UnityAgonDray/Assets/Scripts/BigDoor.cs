@@ -12,11 +12,14 @@ public class BigDoor : MonoBehaviour
 
     [Space(10)]
     public bool canOpen;
+    public bool isOpen = false;
     public bool autoClose;
 
     [Space(10)]
     public bool isLocked;
     public bool needsKey;
+    [Tooltip("The object representing the lock. Set it active if it needs to disappear and hide it if it needs to be placed")]
+    public GameObject lockedObject;
     public InventoryManager inventoryManager;
     [Tooltip("Set to the ID of the corresponding Key in the inventory")]
     public int keyIDTag;
@@ -59,14 +62,14 @@ public class BigDoor : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        bool testBool = animator.GetBool(boolName);
+        //bool testBool = animator.GetBool(boolName);
 
         GameObject ourObject = other.gameObject;
         if (ourObject.tag.CompareTo(playerTag).Equals(0))
         {
             canOpen = false;
 
-            if (autoClose && testBool)
+            if (autoClose && isOpen)
             {
                 AnimateDoor();
             }
@@ -82,20 +85,52 @@ public class BigDoor : MonoBehaviour
                 if (inventoryManager.UseItem(keyIDTag))
                 {
                     isLocked = false;
+                    SwapLock();
                     AnimateDoor();
                 }
             }
         }
     }
 
-    public void ChangeOpenStatus(int num)
+    public void SwapLock()
+    {
+        if (lockedObject.activeInHierarchy)
+        {
+            lockedObject.SetActive(false);
+        } else
+        {
+            lockedObject.SetActive(true);
+        }
+    }
+
+    /**public void ChangeOpenStatus(int num)
     {
         animator.SetBool("IsOpen", 0 >= num);
+    }**/
+
+    public void DoorOpen()
+    {
+        isOpen = true;
+        animator.SetBool(boolName, true);
+    }
+
+    public void DoorClose()
+    {
+        isOpen = false;
+        animator.SetBool(boolName, false);
     }
 
     public void AnimateDoor()
     {
         animator.SetTrigger(triggerName);
+        if (isOpen)
+        {
+           DoorClose();
+        }
+        else
+        {
+            DoorOpen();
+        }
     }
 
 }

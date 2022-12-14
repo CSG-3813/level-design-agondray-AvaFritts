@@ -887,7 +887,7 @@ MonoBehaviour:
   endMsg: 
   startScene: StartScene
   creditsScene: 
-  gameOverScene: 
+  gameOverScene: EndScene
   gameLevels:
   - EvenBetterFixedScale
   gameLevelsCount: 0

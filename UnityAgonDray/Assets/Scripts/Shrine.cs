@@ -53,8 +53,10 @@ public class Shrine : MonoBehaviour
                 //if the item is active and usable
                 if (inventoryManager.UseItem(keyIDTag))
                 {
-                 //Beat the level
-                 GameManager.GM.nextLevel = true;
+                    //Beat the level
+                    GameManager.GM.playerWon = true;
+                    GameManager.GM.GameOver();
+                 //GameManager.GM.nextLevel = true;
                 }
             }
         }
