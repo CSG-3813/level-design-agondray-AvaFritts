@@ -12,7 +12,13 @@ public class Teleporter : MonoBehaviour
     //public float yPos;
     //public Vector3 cameraPositionOffset;
 
-    public GameObject playerGO; 
+    public GameObject playerGO;
+    public GameObject lightGO;
+
+    private void Awake()
+    {
+        lightGO.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,6 +40,7 @@ public class Teleporter : MonoBehaviour
         if (colGO.tag.Equals("Player"))
         {
             canUse = true;
+            lightGO.SetActive(true);
         }
     }//end OnTriggerEnter
 
@@ -43,6 +50,7 @@ public class Teleporter : MonoBehaviour
         if (colGO.tag.Equals("Player"))
         {
             canUse = false;
+            lightGO.SetActive(false);
         }
     } //end OnTriggerExit
 }

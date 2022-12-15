@@ -56,16 +56,18 @@ public class SubmitLocker : MonoBehaviour
 
     public void CheckCode(string submittedAnswer)
     {
-            if (submittedAnswer.CompareTo(correctAnswer) != 0)
-            {
-                currentNumber = "";
-                foreach (Locker hlep in lockerList)
-                {
-                   hlep.ResetLocker();
-                }
-                door.PlayOneShot(closeDoor);
-                return;
-            }
+           
+        if (submittedAnswer.CompareTo(correctAnswer) != 0)       
+        {             
+            currentNumber = "";    
+            foreach (Locker hlep in lockerList)       
+            {        
+                hlep.ResetLocker();      
+                hlep.hasUpdated = false;  
+            }     
+            door.PlayOneShot(closeDoor);   
+            return;   
+        }
 
         doorCtrl.SetBool(boolName, true);
         door.PlayOneShot(openDoor);

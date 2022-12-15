@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //if ESC is pressed, pause game
-        //if (Input.GetKey("escape")) { PauseGame(); }
+        if (Input.GetKey("escape")) { Application.Quit(); }
 
         //Check for next level
         if (nextLevel) { NextLevel(); }

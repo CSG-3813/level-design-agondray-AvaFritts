@@ -18,6 +18,7 @@ public class Locker : MonoBehaviour
     public SubmitLocker submitLocker;
     private Animator doorCtrl;
     public string boolName;
+    public bool hasUpdated;
 
     private AudioSource door;
     public AudioClip openDoor;
@@ -35,7 +36,12 @@ public class Locker : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 doorCtrl.SetBool(boolName, true);
-                submitLocker.UpdateCode(correctOrder);
+                if (!hasUpdated)
+                {
+                    submitLocker.UpdateCode(correctOrder);
+                    hasUpdated = true;
+                }
+                
                 door.PlayOneShot(openDoor);
             }
         }
